@@ -1,4 +1,4 @@
-export type DirectoryType = {
+export interface DirectoryType {
     sections: ({
         title: string;
         imageUrl: string;

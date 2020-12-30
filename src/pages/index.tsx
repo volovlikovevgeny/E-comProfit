@@ -1,8 +1,9 @@
 import Directory from '../components/directory/directory';
-import styles from './homepage.module.scss';
+import styles from '../styles/homepage.module.scss';
 
-export default function HomePage({ sections }): JSX.Element {
+import { DirectoryType } from '../interfaces/Homepage';
 
+export default function HomePage({ sections }: DirectoryType): JSX.Element {
     return (
         <div className={styles.homepage}>
             <Directory sections={sections} />
@@ -11,12 +12,11 @@ export default function HomePage({ sections }): JSX.Element {
 }
 
 
-HomePage.getInitialProps = async ({ req, query }) => {
-
+HomePage.getInitialProps = async () => {
     const res = await fetch(`http://localhost:4200/sections`)
     const sections = await res.json()
 
     return {
-        sections: sections
+        sections
     }
 }

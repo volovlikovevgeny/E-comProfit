@@ -1,13 +1,7 @@
+import Link from 'next/link';
 import styles from './menu-item.module.scss';
 
-type AppProps = {
-    imageUrl: string;
-    title: string;
-    size: string | undefined
-}
-
-
-export default function MenuItem({ imageUrl, title, size }: AppProps): JSX.Element {
+export default function MenuItem({ imageUrl, title, size, id }): JSX.Element {
     return (
         <div className={`${size} ${styles.menu_item}`}>
             <div
@@ -24,3 +18,7 @@ export default function MenuItem({ imageUrl, title, size }: AppProps): JSX.Eleme
         </div>
     )
 }
+
+
+
+
