@@ -9,7 +9,7 @@ export default function Auth(login: string, password: string) {
         return (
             <div>
                 inCorrect password
-            </div>
+            </div> 
         )
     }
 }
