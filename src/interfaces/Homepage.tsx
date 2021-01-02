@@ -11,3 +11,10 @@ export interface DirectoryType {
         id: number;
     })[]
 }
+
+export interface MenuItems {
+    id: number;
+    size: string | undefined;
+    title: string;
+    imageUrl: string;
+}

@@ -6,9 +6,6 @@ import Loading from '../../utils/loading';
 
 import styles from './shop.module.scss';
 
-
-
-
 export default function ShopPage({ collections: serverCollections }: ShopCollections) {
 
     const [collections, setCollection] = useState(serverCollections);

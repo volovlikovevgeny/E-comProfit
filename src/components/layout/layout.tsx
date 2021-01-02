@@ -28,6 +28,11 @@ export default function Layout({ children, title = 'E-com' }: LayoutType) {
                             Shop
                         </a>
                     </Link>
+                    <Link href='/auth'>
+                        <a className={styles.option}>
+                            Auth
+                        </a>
+                    </Link>
                 </div>
             </header>
 

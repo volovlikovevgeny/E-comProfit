@@ -38,7 +38,7 @@ export default function HomePage({ sections: serverSections }: DirectoryType): J
 }
 
 
-HomePage.getInitialProps = async ({ req, query }: NextPageContext) => {
+HomePage.getInitialProps = async ({ req }: NextPageContext) => {
 
     if (!req) {
         return { collections: null }
