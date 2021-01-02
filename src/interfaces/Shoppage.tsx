@@ -7,7 +7,7 @@ export interface ShopCollections {
             imageUrl: string;
             price: number;
         }]
-    }]
+    }];
 }
 
 export interface PreviewCollections {

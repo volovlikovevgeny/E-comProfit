@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    width: 100%;
+    height: 70px;
+
+    .logo_container{
+        height: 100%;
+        width: 70px;
+        padding: 25px;
+        color: inherit;
+    }
+
+    .options{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 50%;
+        height: 100%;
+    }
+
+    .option{
+        padding: 10px 15px;
+        color: inherit;
+    }
+} 
+
+.footer{
+    text-align: center;
+}

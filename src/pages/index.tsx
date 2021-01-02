@@ -1,9 +1,35 @@
+import { useEffect, useState } from 'react';
 import Directory from '../components/directory/directory';
-import styles from '../styles/homepage.module.scss';
-
 import { DirectoryType } from '../interfaces/Homepage';
+import { NextPageContext } from 'next';
+import styles from '../styles/homepage.module.scss';
+import Loading from '../utils/loading';
 
-export default function HomePage({ sections }: DirectoryType): JSX.Element {
+export default function HomePage({ sections: serverSections }: DirectoryType): JSX.Element {
+
+
+    const [sections, setSections] = useState(serverSections);
+
+    useEffect(() => {
+        async function load() {
+            const res = await fetch(`http://localhost:4200/sections`)
+            const data = await res.json()
+
+            setSections(data)
+        }
+
+        if (!serverSections) {
+            load()
+        }
+    }, [])
+
+    if (!sections) {
+        return (
+            <Loading />
+        )
+    }
+
+
     return (
         <div className={styles.homepage}>
             <Directory sections={sections} />
@@ -12,11 +38,18 @@ export default function HomePage({ sections }: DirectoryType): JSX.Element {
 }
 
 
-HomePage.getInitialProps = async () => {
+HomePage.getInitialProps = async ({ req, query }: NextPageContext) => {
+
+    if (!req) {
+        return { collections: null }
+    }
+
     const res = await fetch(`http://localhost:4200/sections`)
-    const sections = await res.json()
+    const sections: DirectoryType = await res.json()
 
     return {
         sections
     }
 }
+
+
