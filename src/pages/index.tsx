@@ -7,7 +7,6 @@ import Loading from '../utils/loading';
 
 export default function HomePage({ sections: serverSections }: DirectoryType): JSX.Element {
 
-
     const [sections, setSections] = useState(serverSections);
 
     useEffect(() => {
@@ -29,14 +28,12 @@ export default function HomePage({ sections: serverSections }: DirectoryType): J
         )
     }
 
-
     return (
         <div className={styles.homepage}>
             <Directory sections={sections} />
         </div>
     )
 }
-
 
 HomePage.getInitialProps = async ({ req }: NextPageContext) => {
 

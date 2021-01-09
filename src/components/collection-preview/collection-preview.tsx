@@ -1,7 +1,7 @@
 import CollectionItem from '../collection-item/collection-item';
 import styles from './collection-preview.module.scss';
 
-import { PreviewCollections } from '../../interfaces/Shoppage'
+import { PreviewCollections } from '../../interfaces/Shoppage';
 
 
 export default function CollectionPreview({ title, items}: PreviewCollections) {

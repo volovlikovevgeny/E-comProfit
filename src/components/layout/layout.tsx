@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import LayoutType from '../../interfaces/Layout';
 import styles from './layout.module.scss';
+import Navbar from '../navbar/navbar';
 
 
 export default function Layout({ children, title = 'E-com' }: LayoutType) {
@@ -12,34 +13,13 @@ export default function Layout({ children, title = 'E-com' }: LayoutType) {
             </Head>
 
             <header className={styles.header}>
-                <Link href='/'>
-                    <a className={styles.logo_container}>
-                        Logotype
-                    </a>
-                </Link>
-                <div className={styles.options}>
-                    <Link href='/'>
-                        <a className={styles.option}>
-                            Home
-                        </a>
-                    </Link>
-                    <Link href='/shop'>
-                        <a className={styles.option}>
-                            Shop
-                        </a>
-                    </Link>
-                    <Link href='/auth'>
-                        <a className={styles.option}>
-                            Auth
-                        </a>
-                    </Link>
-                </div>
+                <Navbar/>
             </header>
 
             <div className='container'>
                 <main>{children}</main>
             </div>
-
+            
             <footer className={styles.footer}>Created By <span className={styles.footer_span}>Jenya || All rights recerved</span></footer>
         </>
     )
